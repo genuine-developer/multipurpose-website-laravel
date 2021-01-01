@@ -158,7 +158,7 @@
                     </div>
                     <a class="dropdown-item" href="profile.html">My Profile</a>
                     <a class="dropdown-item" href="settings.html">Settings</a>
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                    <a id="logout-button" class="dropdown-item" href="login.html">Logout</a>
                 </div>
             </li>
             <!-- /User Menu -->
@@ -795,8 +795,13 @@
 
 <!-- Custom JS -->
 <script  src="admin/assets/js/script.js"></script>
+<script  src="admin/assets/js/customjs/script.js"></script>
 
 </body>
 
 <!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:34 GMT -->
 </html>
+
+<form id="logout-form" action="{{route('logout')}}" method="post">
+    @csrf
+</form>
