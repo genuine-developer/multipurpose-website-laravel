@@ -7,7 +7,7 @@
                 <img src="{{asset('admin/assets/img/logo.png')}}" alt="Logo">
             </a>
             <a href="index.html" class="logo logo-small">
-                <img src="admin/assets/img/logo-small.png" alt="Logo" width="30" height="30">
+                <img src="{{asset('admin/assets/img/logo-small.png')}}" alt="Logo" width="30" height="30">
             </a>
         </div>
         <!-- /Logo -->
@@ -48,10 +48,10 @@
                                 <a href="#">
                                     <div class="media">
 												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="admin/assets/img/doctors/doctor-thumb-01.jpg">
+													<img class="avatar-img rounded-circle" alt="User Image" src="{{asset ('admin/assets/img/doctors/doctor-thumb-01.jpg') }}">
 												</span>
                                         <div class="media-body">
-                                            <p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span> Schedule <span class="noti-title">her appointment</span></p>
+                                            <p class="noti-details"><span class="noti-title">Md Ashraf Uddin</span> Schedule <span class="noti-title">her appointment</span></p>
                                             <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
                                         </div>
                                     </div>
@@ -108,15 +108,15 @@
             <!-- User Menu -->
             <li class="nav-item dropdown has-arrow">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                    <span class="user-img"><img class="rounded-circle" src="admin/assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
+                    <span class="user-img"><img class="rounded-circle" src="admin/assets/img/profiles/ashraf.png" width="31" alt="Md Ashraf Uddin"></span>
                 </a>
                 <div class="dropdown-menu">
                     <div class="user-header">
                         <div class="avatar avatar-sm">
-                            <img src="admin/assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+                            <img src="admin/assets/img/profiles/ashraf.png" alt="User Image" class="avatar-img rounded-circle">
                         </div>
                         <div class="user-text">
-                            <h6>Ryan Taylor</h6>
+                            <h6>Md Ashraf Uddin</h6>
                             <p class="text-muted mb-0">Administrator</p>
                         </div>
                     </div>
