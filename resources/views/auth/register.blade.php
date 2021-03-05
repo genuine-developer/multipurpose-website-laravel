@@ -40,7 +40,7 @@
                         <p class="account-subtitle">Access to our dashboard</p>
 
                         <!-- Form -->
-                        <form action="https://dreamguys.co.in/demo/doccure/admin/login.html">
+                        <form action="{{route('login')}}" method="post">
                             <div class="form-group">
                                 <input class="form-control" type="text" placeholder="Name">
                             </div>

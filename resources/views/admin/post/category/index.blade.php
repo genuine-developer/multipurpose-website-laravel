@@ -21,6 +21,7 @@
 
             <div class="row">
                 <div class="col-md-10">
+                    @include('validate')
                     <a class="btn btn-primary btn-sm" data-toggle="modal" href="#add_category_modal">Add New Category</a>
                     <br>
                     <div class="card">
@@ -44,10 +45,10 @@
                                             <td>Politics</td>
                                             <td>politics</td>
                                             <td>
-                                                <a href="" class="btn btn-primary btn-sm">Edit</a>       
-                                           
-                                                <a href="" class="btn btn-danger btn-sm">Delete</a>   
-                                            </td>    
+                                                <a href="" class="btn btn-primary btn-sm">Edit</a>
+
+                                                <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -65,14 +66,15 @@
                             <button class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method = "post">
+                            <form action="{{route('post-category.store')}}" method = "post">
+                                @csrf
                                 <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Enter Category Name">
+                                    <input name="name" class="form-control" type="text" placeholder="Enter Category Name">
                                 </div>
                                 <div class="form-group">
                                     <input class="btn-primary btn-sm btn" type="submit" value="Add">
                                 </div>
-                                
+
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -81,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
     <!-- /Page Wrapper -->
