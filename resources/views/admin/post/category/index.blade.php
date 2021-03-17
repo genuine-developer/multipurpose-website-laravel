@@ -36,20 +36,37 @@
                                             <th>Id</th>
                                             <th>Category Name</th>
                                             <th>Slug</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($all_data as $data)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Politics</td>
-                                            <td>politics</td>
+                                            <td>{{$loop->index+1}}</td>
+                                            <td>{{$data->name}}</td>
+                                            <td>{{$data ->slug}}</td>
                                             <td>
-                                                <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                                <div class="form-group">
+                                                @if($data->status == 1)
+                                                        <a href="{{route('category.unpublished',$data->id)}}" class="btn btn-sm btn-success">Published</a>
+                                                    @else
+                                                        <a href="{{route('category.published',$data->id)}}" class="btn btn-sm btn-danger">UnPublished</a>
+                                                    @endif
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a data-toggle="modal" href="#edit_category_modal" class="btn btn-primary btn-sm">Edit</a>
+                                                <form style="display:inline;" action="{{route('post-category.destroy',$data->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                                </form>
 
-                                                <a href="" class="btn btn-danger btn-sm">Delete</a>
+
                                             </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -84,9 +101,37 @@
                 </div>
             </div>
 
+            {{-- Edit Category  Modal --}}
+            <div id="edit_category_modal" class="modal fade">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Update Category</h4>
+                            <button class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{route('post-category.store')}}" method = "post">
+                                @csrf
+                                <div class="form-group">
+                                    <input name="name" class="form-control" type="text" placeholder="Enter Category Name">
+                                </div>
+                                <div class="form-group">
+                                    <input class="btn-primary btn-sm btn" type="submit" value="Update">
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <!-- /Page Wrapper -->
 
 
 @endsection
+

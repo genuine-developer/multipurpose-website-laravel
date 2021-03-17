@@ -15,3 +15,19 @@
 <!-- Custom JS -->
 <script  src="{{asset('admin/assets/js/script.js')}}"></script>
 <script  src="{{asset('admin/assets/js/customjs/script.js')}}"></script>
+
+<script>
+
+    (function ($){
+        $(document).ready(function (){
+
+
+            setTimeout(function() {
+                $('#msg').fadeOut('fast');
+            }, 3000);
+
+
+        });
+    })(jQuery)
+
+</script>

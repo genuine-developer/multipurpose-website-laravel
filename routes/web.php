@@ -21,3 +21,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('post-category', CategoryController::class);
+
+Route::get('post-category-unpublished/{id}', 'CategoryController@unpublishedCategory')->name('category.unpublished');
+Route::get('post-category-published/{id}', 'CategoryController@publishedCategory')->name('category.published');
+
+
+//Route::get('post-category-unpublished/{id}', [App\Http\Controllers\CategoryController::class, 'unpublishedCategory'])->name('category.unpublished');

@@ -15,7 +15,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.post.category.index');
+        $data = Category::all();
+        return view('admin.post.category.index',[
+            'all_data'  =>$data,
+        ]);
     }
 
     /**
@@ -46,6 +49,7 @@ class CategoryController extends Controller
             'slug'  =>Str::slug($request->name),
 
         ]);
+
         return redirect()->route('post-category.index')->with('success','Category added successfully');
     }
 
@@ -91,6 +95,19 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Category::find($id);
+        $data ->delete();
+        return redirect()->route('post-category.index')->with('success','Category Deleted successfull');
+    }
+
+    public function unpublishedCategory(Request $request)
+    {
+        $data = Category::find($request->id)->update(['status' => 0]);
+        return redirect()->route('post-category.index')->with('success','Category Unpublished successfull');
+    }
+    public function publishedCategory(Request $request)
+    {
+        $data = Category::find($request->id)->update(['status' => 1]);
+        return redirect()->route('post-category.index')->with('success','Category Published successfull');
     }
 }
