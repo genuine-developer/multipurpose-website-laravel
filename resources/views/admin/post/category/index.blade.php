@@ -56,7 +56,7 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <a data-toggle="modal" href="#edit_category_modal" class="btn btn-primary btn-sm">Edit</a>
+                                                <a id="category_edit" edit_id="{{$data->id}}" data-toggle="modal" href="#edit_category_modal" class="btn btn-primary btn-sm">Edit</a>
                                                 <form style="display:inline;" action="{{route('post-category.destroy',$data->id)}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
@@ -114,6 +114,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <input name="name" class="form-control" type="text" placeholder="Enter Category Name">
+                                    <input name="id" class="form-control" type="hidden" placeholder="Enter Category Name">
                                 </div>
                                 <div class="form-group">
                                     <input class="btn-primary btn-sm btn" type="submit" value="Update">

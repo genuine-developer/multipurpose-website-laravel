@@ -72,7 +72,11 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Category::find($id);
+        return [
+            'name' => $data-> name,
+        ];
+
     }
 
     /**
@@ -110,4 +114,10 @@ class CategoryController extends Controller
         $data = Category::find($request->id)->update(['status' => 1]);
         return redirect()->route('post-category.index')->with('success','Category Published successfull');
     }
+
+
+
+
+
+
 }

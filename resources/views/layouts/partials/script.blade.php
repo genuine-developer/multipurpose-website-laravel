@@ -26,6 +26,23 @@
                 $('#msg').fadeOut('fast');
             }, 3000);
 
+            //Category edit
+            $(document).on('click','a#category_edit',function (e){
+                e.preventDefault();
+
+                let id=$(this).attr('edit_id');
+
+                $.ajax({
+                   url: 'post-category-edit/' +id,
+                    dataType: "json",
+                    success: function(data){
+                       $('#edit_category_modal form input[name="name"]').val(data.name);
+                       $('#edit_category_modal form input[name="id"]').val(data.id);
+                    }
+                });
+
+            });
+
 
         });
     })(jQuery)
