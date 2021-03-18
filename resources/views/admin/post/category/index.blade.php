@@ -110,11 +110,11 @@
                             <button class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{route('post-category.store')}}" method = "post">
+                            <form action="{{route('category.update')}}" method = "POST">
                                 @csrf
                                 <div class="form-group">
                                     <input name="name" class="form-control" type="text" placeholder="Enter Category Name">
-                                    <input name="id" class="form-control" type="hidden" placeholder="Enter Category Name">
+                                    <input name="id" class="form-control" type="hidden">
                                 </div>
                                 <div class="form-group">
                                     <input class="btn-primary btn-sm btn" type="submit" value="Update">

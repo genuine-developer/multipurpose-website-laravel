@@ -26,6 +26,6 @@ Route::get('post-category-unpublished/{id}', 'CategoryController@unpublishedCate
 Route::get('post-category-published/{id}', 'CategoryController@publishedCategory')->name('category.published');
 
 Route::get('post-category-edit/{id}','CategoryController@edit');
-Route::get('post-category-update','CategoryController@update')->name('category.update');
+Route::post('post-category-update','CategoryController@update')->name('category.update');
 
 //Route::get('post-category-unpublished/{id}', [App\Http\Controllers\CategoryController::class, 'unpublishedCategory'])->name('category.unpublished');
