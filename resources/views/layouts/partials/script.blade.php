@@ -16,6 +16,11 @@
 <script  src="{{asset('admin/assets/js/script.js')}}"></script>
 <script  src="{{asset('admin/assets/js/customjs/script.js')}}"></script>
 
+<script  src="{{asset('admin/assets/js/fontawesome-all.min.js')}}"></script>
+
+
+
+
 <script>
 
     (function ($){
@@ -40,6 +45,32 @@
                        $('#edit_category_modal form input[name="id"]').val(data.id);
                     }
                 });
+
+            });
+
+            //Tag edit
+            $(document).on('click','a#tag',function (e){
+                e.preventDefault();
+
+                let id=$(this).attr('edit_id');
+
+                $.ajax({
+                    url: 'tag-edit/' +id,
+                    dataType: "json",
+                    success: function(data){
+                        $('#edit_tag_modal form input[name="name"]').val(data.name);
+                        $('#edit_tag_modal form input[name="id"]').val(data.id);
+                    }
+                });
+
+            });
+
+            //Post Featured Image change
+            $(document).on('change',"input#fimg",function(event){
+                event.preventDefault();
+                let post_image_url = URL.createObjectURL(event.target.files[0]);
+                $('img#featured_image_load').attr('src', post_image_url);
+
 
             });
 
