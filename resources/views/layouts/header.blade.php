@@ -120,7 +120,7 @@
                             <p class="text-muted mb-0">Administrator</p>
                         </div>
                     </div>
-                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="#">My Profile</a>
                     <a class="dropdown-item" href="settings.html">Settings</a>
                     <a id="logout-button" class="dropdown-item" href="login.html">Logout</a>
                 </div>
@@ -131,4 +131,4 @@
         <!-- /Header Right Menu -->
 
     </div>
-    <!-- /Header -->
+    <!-- /Header --
