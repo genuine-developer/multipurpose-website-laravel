@@ -16,6 +16,9 @@
 <script  src="{{asset('admin/assets/js/script.js')}}"></script>
 <script  src="{{asset('admin/assets/js/customjs/script.js')}}"></script>
 
+<!--Ckeditor cdn-->
+<script src="//cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
+
 <script  src="{{asset('admin/assets/js/fontawesome-all.min.js')}}"></script>
 
 
@@ -26,7 +29,10 @@
     (function ($){
         $(document).ready(function (){
 
+            //Ckeditor
+            CKEDITOR.replace('text-editor');
 
+            //Notification Msg display time
             setTimeout(function() {
                 $('#msg').fadeOut('fast');
             }, 3000);

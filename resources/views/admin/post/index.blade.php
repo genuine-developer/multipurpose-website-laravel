@@ -97,6 +97,9 @@
                                     <img style="max-width: 100%;" id="featured_image_load" src="" >
                                 </div>
                                 <div class="form-group">
+                                    <textarea name="text-editor"></textarea>
+                                </div>
+                                <div class="form-group">
                                     <input class="btn-primary btn-sm btn" type="submit" value="Add">
                                 </div>
 
