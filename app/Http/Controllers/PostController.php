@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -17,7 +19,8 @@ class PostController extends Controller
     public function index()
     {
         $all_data = Post::all();
-        return view('admin.post.index',compact('all_data'));
+        $categories= Category::all();
+        return view('admin.post.index',compact('all_data','categories'));
     }
 
     /**
@@ -38,15 +41,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request,[
             'title' =>'required|unique:posts',
+            'content' =>'required',
 
         ]);
 
         Post::create([
             'title'  =>$request->title,
             'slug'  =>Str::slug($request->title),
-
+            'user_id'  =>Auth::user()->id,
+            'content'  => $request->content,
         ]);
 
         return redirect()->route('post.index')->with('success','Post added successfully');

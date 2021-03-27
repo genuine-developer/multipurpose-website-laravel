@@ -85,10 +85,19 @@
                             <button class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body">
-                            <form action="#" method = "POST" enctype="multipart/form-data">
+                            <form action="{{route('post.store')}}" method = "POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <input name="title" class="form-control" type="text" placeholder="Enter Post Title">
+                                </div>
+                                <div class="form-group">
+                                    <h6>Categories</h6>
+                                        @foreach($categories as $category)
+                                        <label>
+                                            <input style="margin-right:5px;" type="checkbox" name="category[]" value="{{$category->id}}">{{$category->name}}
+                                        </label>
+                                            <br>
+                                            @endforeach
                                 </div>
                                 <div class="form-group">
                                     <label style="font-size:80px;cursor:pointer;" for="fimg"><i class="fas fa-file-image"></i></label>
@@ -97,7 +106,7 @@
                                     <img style="max-width: 100%;" id="featured_image_load" src="" >
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="text-editor"></textarea>
+                                    <textarea name="content" id="text-editor"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <input class="btn-primary btn-sm btn" type="submit" value="Add">
