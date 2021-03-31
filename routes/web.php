@@ -31,6 +31,10 @@ Route::get('post-category-published/{id}', 'CategoryController@publishedCategory
 Route::get('post-category-edit/{id}','CategoryController@edit');
 Route::post('post-category-update','CategoryController@update')->name('category.update');
 
+Route::get('post-category-trash','CategoryController@trash')->name('category.trash');
+Route::get('post-category-restore/{id}','CategoryController@restore')->name('category.restore');
+Route::post('post-category-delete/{id}','CategoryController@delete')->name('category.delete');
+
 //Route::get('post-category-unpublished/{id}', [App\Http\Controllers\CategoryController::class, 'unpublishedCategory'])->name('category.unpublished');
 
 //Tag Routes

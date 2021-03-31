@@ -23,6 +23,7 @@
                 <div class="col-md-10">
                     @include('validate')
                     <a class="btn btn-primary btn-sm" data-toggle="modal" href="#add_category_modal">Add New Category</a>
+                    <a href="{{route('category.trash')}}" class="btn btn-sm btn-warning float-right"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     <br>
                     <div class="card">
                         <div class="card-header">
@@ -62,8 +63,6 @@
                                                     @method('DELETE')
                                                     <button class="btn btn-danger btn-sm">Delete</button>
                                                 </form>
-
-
                                             </td>
                                         </tr>
                                         @endforeach

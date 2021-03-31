@@ -21,6 +21,20 @@ class CategoryController extends Controller
         ]);
     }
 
+    public function trash()
+    {
+//        $data = Category::all();
+//        return view('admin.post.category.trash',[
+//            'all_data'  =>$data,
+
+        $data = Category::withTrashed()
+            ->get();
+
+        return view('admin.post.category.trash',[
+           'all_data'  =>$data,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -123,8 +137,21 @@ class CategoryController extends Controller
         return redirect()->route('post-category.index')->with('success','Category Published successfull');
     }
 
+    public function restore($id)
+    {
+        $data = Category::withTrashed()
+            ->where('id', $id)
+            ->restore();
+        return redirect()->route('post-category.index')->with('success','Category restored successfull');
+    }
 
-
+    public function delete($id)
+    {
+        $data = Category::withTrashed()
+            ->where('id', $id)
+            ->forceDelete();
+        return redirect()->route('category.trash')->with('success','Category Deleted Permanently');
+    }
 
 
 
