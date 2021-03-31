@@ -122,7 +122,7 @@
                     </div>
                     <a class="dropdown-item" href="#">My Profile</a>
                     <a class="dropdown-item" href="settings.html">Settings</a>
-                    <a id="logout-button" class="dropdown-item" href="login.html">Logout</a>
+                    <a id="logout-button" class="dropdown-item" href="#">Logout</a>
                 </div>
             </li>
             <!-- /User Menu -->

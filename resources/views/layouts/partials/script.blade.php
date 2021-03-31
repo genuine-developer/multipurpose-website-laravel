@@ -29,6 +29,12 @@
     (function ($){
         $(document).ready(function (){
 
+            //Logout System
+            $('button#logout-button').click(function (e){
+                e.preventDefault();
+                $('form#logout-form').submit();
+            });
+
             //Ckeditor
             CKEDITOR.replace('text-editor');
 
