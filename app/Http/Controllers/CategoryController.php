@@ -27,7 +27,7 @@ class CategoryController extends Controller
 //        return view('admin.post.category.trash',[
 //            'all_data'  =>$data,
 
-        $data = Category::withTrashed()
+        $data = Category::onlyTrashed()
             ->get();
 
         return view('admin.post.category.trash',[
