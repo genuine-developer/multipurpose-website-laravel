@@ -37,21 +37,24 @@
                 <div class="login-right">
                     <div class="login-right-wrap">
                         <h1>Register</h1>
+                        @include('validate')
                         <p class="account-subtitle">Access to our dashboard</p>
 
                         <!-- Form -->
-                        <form action="{{route('login')}}" method="post">
+                        <form action="{{route('register')}}" method="POST">
+                            @csrf
+
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Name">
+                                <input class="form-control" name="name" type="text" placeholder="Name">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Email">
+                                <input class="form-control" name="email" type="email" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Password">
+                                <input class="form-control" name="password" type="password" placeholder="Password">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Confirm Password">
+                                <input class="form-control" name="password_confirmation" type="password" placeholder="Confirm Password">
                             </div>
                             <div class="form-group mb-0">
                                 <button class="btn btn-primary btn-block" type="submit">Register</button>
@@ -92,5 +95,4 @@
 
 </body>
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:53 GMT -->
 </html>
