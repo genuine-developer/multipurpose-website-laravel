@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/authbasecontent', [App\Http\Controllers\HomeController::class, 'authbasecontent'])->name('authbasecontent');
 Route::get('/profile','ProfileController@index' )->name('admin.profile');
 
 //Category Routes

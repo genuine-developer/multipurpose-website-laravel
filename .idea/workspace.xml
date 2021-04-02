@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab0f03d4-e4aa-4b77-a892-e1fd4ab811c8" name="Default Changelist" comment="category edit / update done">
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_04_02_131909_add_role_column_to_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/authbasecontent.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +175,8 @@
       <workItem from="1616652712840" duration="15447000" />
       <workItem from="1617085933584" duration="2386000" />
       <workItem from="1617097568563" duration="1853000" />
-      <workItem from="1617104488763" duration="15829000" />
+      <workItem from="1617104488763" duration="16401000" />
+      <workItem from="1617364013475" duration="3816000" />
     </task>
     <servers />
   </component>
