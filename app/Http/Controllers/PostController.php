@@ -19,18 +19,22 @@ class PostController extends Controller
     public function index()
     {
         $all_data = Post::all();
-        $categories= Category::all();
-        return view('admin.post.index',compact('all_data','categories'));
+        $posts= Post::all();
+        return view('admin.post.index',compact('all_data','posts'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $cat = Category::all();
+        $tag = Tag::all();
+        return view('admin.post.create',[
+            'all_cat' => $cat,
+            'all_tag' => $tag
+        ]);
     }
 
     /**
@@ -51,7 +55,7 @@ class PostController extends Controller
         Post::create([
             'title'  =>$request->title,
             'slug'  =>Str::slug($request->title),
-            'user_id'  =>Auth::user()->id,
+//            'user_id'  =>Auth::user()->id,
             'content'  => $request->content,
         ]);
 
@@ -95,7 +99,7 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $id = $request->id;
-        $data = Tag::find($id);
+        $data = Post::find($id);
 //        $data ->user_id = $request->id;
         $data ->title = $request->title;
         $data ->slug = Str::slug($request->title);

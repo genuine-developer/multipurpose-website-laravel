@@ -57,11 +57,11 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <a id="category_edit" edit_id="{{$data->id}}" data-toggle="modal" href="#edit_category_modal" class="btn btn-primary btn-sm">Edit</a>
+                                                <a id="category_edit" edit_id="{{$data->id}}" data-toggle="modal" href="#edit_category_modal" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
                                                 <form style="display:inline;" action="{{route('post-category.destroy',$data->id)}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

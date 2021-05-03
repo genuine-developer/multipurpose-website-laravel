@@ -137,6 +137,7 @@ class CategoryController extends Controller
         return redirect()->route('post-category.index')->with('success','Category Published successfull');
     }
 
+
     public function restore($id)
     {
         $data = Category::withTrashed()

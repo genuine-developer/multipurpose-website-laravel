@@ -12,6 +12,9 @@
 <script src="{{asset('admin/assets/plugins/morris/morris.min.js')}}"></script>
 <script src="{{asset('admin/assets/js/chart.morris.js')}}"></script>
 
+<!---slect2 js -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <!-- Custom JS -->
 <script  src="{{asset('admin/assets/js/script.js')}}"></script>
 <script  src="{{asset('admin/assets/js/customjs/script.js')}}"></script>
@@ -42,6 +45,8 @@
             setTimeout(function() {
                 $('#msg').fadeOut('fast');
             }, 3000);
+
+
 
             //Category edit
             $(document).on('click','a#category_edit',function (e){
@@ -85,6 +90,10 @@
 
 
             });
+
+            //Select2 select box
+            $('.select-tag').select2();
+
 
 
         });

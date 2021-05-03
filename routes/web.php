@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/authbasecontent', [App\Http\Controllers\HomeController::class, 'authbasecontent'])->name('authbasecontent');
 Route::get('/profile','ProfileController@index' )->name('admin.profile');
 
@@ -28,6 +29,8 @@ Route::resource('post-category', CategoryController::class);
 
 Route::get('post-category-unpublished/{id}', 'CategoryController@unpublishedCategory')->name('category.unpublished');
 Route::get('post-category-published/{id}', 'CategoryController@publishedCategory')->name('category.published');
+
+
 
 Route::get('post-category-edit/{id}','CategoryController@edit');
 Route::post('post-category-update','CategoryController@update')->name('category.update');

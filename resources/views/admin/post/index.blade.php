@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-md-10">
                     @include('validate')
-                    <a class="btn btn-primary btn-sm" data-toggle="modal" href="#add_Post_modal">Add New Post</a>
+                    <a class="btn btn-primary btn-sm"  href="{{route('post.create')}}">Add New Post</a>
                     <br>
                     <div class="card">
                         <div class="card-header">
@@ -91,10 +91,10 @@
                                     <input name="title" class="form-control" type="text" placeholder="Enter Post Title">
                                 </div>
                                 <div class="form-group">
-                                    <h6>Categories</h6>
-                                        @foreach($categories as $category)
+                                    <h6>Posts</h6>
+                                        @foreach($posts as $post)
                                         <label>
-                                            <input style="margin-right:5px;" type="checkbox" name="category[]" value="{{$category->id}}">{{$category->name}}
+                                            <input style="margin-right:5px;" type="checkbox" name="category[]" value="{{$post->id}}">{{$post->name}}
                                         </label>
                                             <br>
                                             @endforeach
