@@ -90,9 +90,52 @@
 
 
             });
+            //Gallery post image load
+            $(document).on('change',"input#gall_post_img_select",function(e){
+
+                let img_gall = '';
+                for(let i=0; i<e.target.files.length; i++){
+                    let file_url_g = URL.createObjectURL(e.target.files[i]);
+                    img_gall +='<img class="shadow" " src="'+file_url_g+'">';
+                }
+
+                $('.post_gallery_img').html(img_gall);
+
+
+            });
 
             //Select2 select box
             $('.select-tag').select2();
+
+            //Select post format
+            $('#post_format').change(function (){
+                let format = $(this).val();
+                if ( format == 'image'){
+                    $('.post-image').show();
+
+                }else {
+                    $('.post-image').hide();
+                }
+                if ( format == 'audio'){
+                    $('.post-audio').show();
+
+                }else {
+                    $('.post-audio').hide();
+                }
+                if ( format == 'video'){
+                    $('.post-video').show();
+
+                }else {
+                    $('.post-video').hide();
+                }
+                if ( format == 'gallery'){
+                    $('.post-gallery-image').show();
+
+                }else {
+                    $('.post-gallery-image').hide();
+                }
+            });
+
 
 
 
