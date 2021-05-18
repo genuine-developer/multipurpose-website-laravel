@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/idevitco/blog
+    - export DEPLOYPATH=/home/idevitco/public_html/blog
     - /bin/cp -a * $DEPLOYPATH
