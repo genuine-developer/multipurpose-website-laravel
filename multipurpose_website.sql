@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2021 at 07:58 AM
+-- Generation Time: May 12, 2021 at 06:45 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -42,8 +42,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(7, 'Geography', 'geography', 1, NULL, '2021-03-30 19:09:07', '2021-04-02 05:54:27'),
-(8, 'Politics', 'politics', 1, NULL, '2021-03-30 19:09:21', '2021-04-01 07:50:07');
+(7, 'Geography', 'geography', 0, NULL, '2021-03-30 19:09:07', '2021-04-29 00:29:28'),
+(9, 'Bangladesh', 'bangladesh', 1, NULL, '2021-04-23 04:33:34', '2021-04-23 04:33:34'),
+(10, 'Test', 'test', 1, NULL, '2021-04-28 07:25:52', '2021-04-28 23:52:03');
 
 -- --------------------------------------------------------
 
@@ -175,6 +176,15 @@ CREATE TABLE `tags` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `tags`
+--
+
+INSERT INTO `tags` (`id`, `name`, `slug`, `status`, `created_at`, `updated_at`) VALUES
+(2, 'international', 'international', 'Published', '2021-04-23 04:32:26', '2021-04-23 04:32:26'),
+(3, 'politics', 'politics', 'Published', '2021-05-01 23:48:14', '2021-05-01 23:48:14'),
+(4, 'entertainment', 'entertainment', 'Published', '2021-05-01 23:48:21', '2021-05-01 23:48:21');
+
 -- --------------------------------------------------------
 
 --
@@ -279,7 +289,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `category_post`
@@ -321,7 +331,7 @@ ALTER TABLE `profiles`
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
